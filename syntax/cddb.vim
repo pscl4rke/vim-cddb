@@ -6,9 +6,15 @@ if exists("b:current_syntax")
 endif
 
 syn match cddbComment "^#.*"
-syn match cddbKey "^[A-Z0-9]*="
+syn match cddbCatchallKey "^[A-Z0-9]*="
+syn match cddbTitleKey "^T[A-Z0-9]*="
+syn match cddbDiscKey "^D[A-Z0-9]*="
+syn match cddbDiscId "^DISCID=.*$"
 
 hi def link cddbComment Comment
-hi def link cddbKey Identifier
+hi def link cddbCatchallKey Identifier
+hi def link cddbTitleKey Function
+hi def link cddbDiscKey Define
+hi def link cddbDiscId Label
 
 let b:current_syntax = "cddb"
